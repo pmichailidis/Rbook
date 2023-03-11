@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Κεφάλαιο 1 Εισαγωγή | Εισαγωγή στην γλώσσα R για Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες</title>
+  <title>Κεφάλαιο 1 Εισαγωγή | Εισαγωγή στην γλώσσα R για Υπολογιστική Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Κεφάλαιο 1 Εισαγωγή | Εισαγωγή στην γλώσσα R για Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες" />
+  <meta property="og:title" content="Κεφάλαιο 1 Εισαγωγή | Εισαγωγή στην γλώσσα R για Υπολογιστική Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Κεφάλαιο 1 Εισαγωγή | Εισαγωγή στην γλώσσα R για Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες" />
+  <meta name="twitter:title" content="Κεφάλαιο 1 Εισαγωγή | Εισαγωγή στην γλώσσα R για Υπολογιστική Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Παναγιώτης Μιχαηλίδης" />
 
 
-<meta name="date" content="2021-04-09" />
+<meta name="date" content="2023-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="env.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,72 +49,33 @@
 
 
 
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -141,7 +101,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#προγραμματιστικό-περιβάλλον-εργασίας"><i class="fa fa-check"></i><b>1.2</b> Προγραμματιστικό Περιβάλλον Εργασίας</a></li>
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#οργάνωση-βιβλίου"><i class="fa fa-check"></i><b>1.3</b> Οργάνωση Βιβλίου</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>2</b> Υπολογιστικό Περιβάλλον Εργασίας</a></li>
+<li class="chapter" data-level="2" data-path="env.html"><a href="env.html"><i class="fa fa-check"></i><b>2</b> Υπολογιστικό Περιβάλλον Εργασίας</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="env.html"><a href="env.html#λίγα-λόγια-για-τη-r"><i class="fa fa-check"></i><b>2.1</b> Λίγα λόγια για τη R</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="env.html"><a href="env.html#μεταφόρτωση-και-εγκατάσταση-r"><i class="fa fa-check"></i><b>2.1.1</b> Μεταφόρτωση και Εγκατάσταση R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="env.html"><a href="env.html#λίγα-λόγια-για-το-rstudio"><i class="fa fa-check"></i><b>2.2</b> Λίγα λόγια για το RStudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="env.html"><a href="env.html#μεταφόρτωση-και-εγκατάσταση-rstudio"><i class="fa fa-check"></i><b>2.2.1</b> Μεταφόρτωση και Εγκατάσταση RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="env.html"><a href="env.html#περιβάλλον-και-διάταξη-του-rstudio"><i class="fa fa-check"></i><b>2.3</b> Περιβάλλον και Διάταξη του RStudio</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="env.html"><a href="env.html#παράθυρο-κονσόλας"><i class="fa fa-check"></i><b>2.3.1</b> Παράθυρο Κονσόλας</a></li>
+<li class="chapter" data-level="2.3.2" data-path="env.html"><a href="env.html#παράθυρο-κώδικα"><i class="fa fa-check"></i><b>2.3.2</b> Παράθυρο Κώδικα</a></li>
+<li class="chapter" data-level="2.3.3" data-path="env.html"><a href="env.html#παράθυρο-περιβάλλοντος"><i class="fa fa-check"></i><b>2.3.3</b> Παράθυρο Περιβάλλοντος</a></li>
+<li class="chapter" data-level="2.3.4" data-path="env.html"><a href="env.html#παράθυρο-αρχείων"><i class="fa fa-check"></i><b>2.3.4</b> Παράθυρο Αρχείων</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="basicsR.html"><a href="basicsR.html"><i class="fa fa-check"></i><b>3</b> Τα Βασικά Στοιχεία της R</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="basicsR.html"><a href="basicsR.html#αντικείμενα"><i class="fa fa-check"></i><b>3.1</b> Αντικείμενα</a>
@@ -183,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Εισαγωγή στην γλώσσα R για Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Εισαγωγή στην γλώσσα R για Υπολογιστική Ανάλυση Δεδομένων στις Κοινωνικές Επιστήμες</a>
           </h1>
         </div>
 
@@ -191,11 +168,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1" number="1">
-<h1><span class="header-section-number">Κεφάλαιο 1</span> Εισαγωγή</h1>
-<div id="ροή-εργασίας-ανάλυσης-δεδομένων" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Ροή Εργασίας Ανάλυσης Δεδομένων</h2>
-<p>O ερευνητής μετά την επιλογή του ερευνητικού θέματος προς μελέτη και τη διατύπωση ερευνητικών ερωτήσεων ή υποθέσεων, ξεκινάει μια ερευνητική διαδικασία ανάλυσης δεδομένων με σκοπό να απαντήσει τις ερωτήσεις με την βοήθεια υπολογιστικών μεθόδων και εργαλείων. Αυτή η ανάλυση δεδομένων ακολουθεί μια συγκεκριμένη ροή εργασίας και περιλαμβάνει τις παρακάτω εργασίες <span class="citation">(<a href="references.html#ref-r4ds" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>:</p>
+<div id="intro" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Κεφάλαιο 1</span> Εισαγωγή<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ροή-εργασίας-ανάλυσης-δεδομένων" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Ροή Εργασίας Ανάλυσης Δεδομένων<a href="intro.html#ροή-εργασίας-ανάλυσης-δεδομένων" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O ερευνητής μετά την επιλογή του ερευνητικού θέματος προς μελέτη και τη διατύπωση ερευνητικών ερωτήσεων ή υποθέσεων, ξεκινάει μια ερευνητική διαδικασία ανάλυσης δεδομένων με σκοπό να απαντήσει τις ερωτήσεις με την βοήθεια υπολογιστικών μεθόδων και εργαλείων. Αυτή η ανάλυση δεδομένων ακολουθεί μια συγκεκριμένη ροή εργασίας και περιλαμβάνει τις παρακάτω εργασίες <span class="citation">(<a href="#ref-r4ds" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li>Αναγνώριση πηγών δεδομένων</li>
 <li>Εισαγωγή δεδομένων</li>
@@ -212,8 +189,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Εδώ πρέπει να αναφερθεί ότι οι εργασίες διαχείρισης, οπτκοποίησης και μοντελοποίησης δεδομένων είναι επαναληπτικές. Αυτό σημαίνει ότι ο ερευνητής δοκιμάζει διάφορες προβολές ή συνδυασμούς παρατηρήσεων και μεταβλητών του πίνακα δεδομένων, διάφορες οπτικοποιήσεις δεδομένων και διάφορα μοντέλα έτσι ώστε να ανακαλύψει σημαντικές δομές ή ενδείξεις στα δεδομένα που θα επιτρέψουν να απαντήσει στα ερευνητικά ερωτήματα.</p>
 <p>Η τελευταία εργασία της ροής ανάλυσης δεδομένων είναι η <strong>παρουσίαση ερευνητικής εργασίας</strong>. Σε αυτή την εργασία, ο ερευνητής προσπαθεί να παρουσιάζει τα αποτελέσματα της ανάλυσης δεδομένων και τις γνώσεις του από την κατανόηση δεδομένων στην ευρύτερη επιστημονική κοινότητα. Η παρουσίαση της ερευνητικής εργασίας συνήθως γίνεται σε διάφορες μορφές όπως μια ερευνητική αναφορά, οι διαφάνειες μιας παρουσίασης, μια ιστοσελίδα ή ακόμα ένα ψηφιακό πίνακα ελέγχου.</p>
 </div>
-<div id="προγραμματιστικό-περιβάλλον-εργασίας" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Προγραμματιστικό Περιβάλλον Εργασίας</h2>
+<div id="προγραμματιστικό-περιβάλλον-εργασίας" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Προγραμματιστικό Περιβάλλον Εργασίας<a href="intro.html#προγραμματιστικό-περιβάλλον-εργασίας" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Μέχρι τώρα, ένας ερευνητής κοινωνικών επιστημών εκτελεί τις περισσότερες από τις παραπάνω εργασίες ανάλυσης δεδομένων με παροδοσιακό τρόπο, δηλαδή, πραγματοποιεί ανάλυση δεδομένων με κάποια δημοφιλή λογισμικά όπως MS-Excel, SPSS, Stata, κ.λπ. Ο παροδοσιακός αυτός τρόπος εργασίας είναι ότι τα λογισμικά αυτά παρέχουν στον επιστήμονα ένα γραφικό περιβάλλον εργασίας έτσι ώστε να είναι πιο εύκολη, φιλική και διαδραστική η ανάλυση δεδομένων. Παρόλα αυτά, ο παροδοσιακός τρόπος εργασίας αντιμετωπίζει ορισμένους βασικούς περιορισμούς.</p>
 <p>Πρώτον, ο παραδοσιακός τρόπος εργασίας παρουσιάζει υψηλό κόστος στον ερευνητή επειδή τα περισσότερα λογισμικά με γραφικό περιβάλλον είναι εμπορικά και έχουν υψηλή τιμή. Αυτό έχει σαν αποτελέσμα, τα λογισμικά αυτά να μην είναι διαθέσιμα στους περισσότερους ερευνητές.</p>
 <p>Δεύτερον, η ροή εργασίας ανάλυσης δεδομένων (1-6) με τα γνωστά λογισμικά δεν ακολουθείται με ενιαίο τρόπο. Αυτό σημαίνει ότι οι περισσότερες εργασίες της ανάλυσης δεδομένων μπορεί να πραγματοποιηθούν χρησιμοποιώντας πολλά και διαφορετικά προγράμματα. Για παράδειγμα, ο ερευνητής στα πλαίσια μιας ερευνητικής εργασίας μπορεί να χρησιμοποιήσει διαφορετικά λογισμικά όπως για την εργασία 1 μπορεί να μεταφορτώσει τα αρχεία δεδομένων από το Διαδίκτυο χειροκίνητα, για τις εργασίες 2 έως 5 μπορεί να χρησιμοποιήσει ένα πρόγραμμα διαχείρισης δεδομένων όπως MS-Εxcel ή Google Sheets και πρόγραμμα στατιστικής επεξεργασίας όπως Stata ή SPSS και τέλος για την εργασία 6 να χρησιμοποιήσει ένα πρόγραμμα επεξεργασίας κειμένου για συγγραφή του κειμένου της εργασίας καθώς και να αντιγράψει και να επικολήσει διαγράμματα από άλλα στατιστικά προγράμματα στο πρόγραμμα επεξεργασίας κειμένου όπως MS-Word ή Google Docs. Το τελευταίο δεν ο ιδανικός τρόπος πραγματοποίησης της επιστημονικής έρευνας διότι ο επιστήμονας ξοδεύει πολύ χρόνο στην αντιγραφή και επικόλληση των σχημάτων παρά να επικεντρώνεται η προσοχή του στην συλλογή και ανάλυση δεδομένων.</p>
@@ -221,8 +198,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Ένα τελευταίο περιορισμό είναι ότι είναι δύσκολη η αναπαραγωγή της ανάλυσης δεδομένων και των αποτελεσμάτων της ερευνητικής εργασίας. Με άλλα λόγια, ένας άλλος ερευνητής δεν έχει την δυνατότητα να επαναλάβει ή να ακολουθήσει τα βήματα της ανάλυσης δεδομένων με το ίδιο τρόπο όπως ο αρχικός ερευνητής και επίσης να πάρει τα ίδια ερευνητικά αποτελέσματα.</p>
 <p>Για να άρουμε τους παραπάνω περιορισμούς έτσι ώστε να έχουμε μια ροή εργασίας ανάλυσης δεδομένων (δηλαδή, οι εργασίες 1-6) <strong>χαμηλού κόστους</strong>, <strong>ενιαία</strong>, <strong>αποδοτική</strong> και <strong>αναπαραγωγίσιμη</strong>, θα πρέπει να υιοθετήσουμε ένα σύγχρονο υπολογιστικό περιβάλλον. Ένα τέτοιο περιβάλλον ανάλυσης δεδομένων είναι η γλώσσα R (ή εναλλακτικά η Python) το οποίο είναι ανοικτό λογισμικό και ακολουθεί το μοντέλο του προγραμματισμού. Αυτό το μοντέλο προγραμματισμού επιτρέπει στον ερευνητή να γράφει εντολές γραμμένες σε προγράμματα R για τα διάφορα στάδια της ερευνητικής εργασίας από τη συλλογή δεδομένων μέχρι τη συγγραφή κειμένου με έναν ενιαίο και αποδοτικό τρόπο. Αυτό σημαίνει πρακτικά ότι τα προγράμματα είναι γραμμένα κάτω από την ίδια γλώσσα R και επίσης αυτοματοποιούν τις εργασίες διαχείρισης και ανάλυσης δεδομένων μεγάλου όγκου κάνοντας απλά την επανεκτέλεση των προγραμμάτων. Επιπρόσθετα, η γλώσσα R παρέχει την δυνότητα αναπαραγωγής της ερευνητικής εργασίας δίνοντας στους υπόλοιπους ερευνητές το κώδικα που περιέχει τα βήματα της ανάλυσης δεδομένων καθώς και τα σύνολα δεδομένων. Με άλλα λόγια, η R ενισχύει την διαφάνεια της επιστημονικής έρευνας και την συνεργασία μεταξύ των ερευνητών στις κοινωνικές επιστήμες και γενικότερα στην επιστήμη. Τέλος, ο προγραμματισμός είναι ένα εργαλείο που θα βοηθήσει το κοινωνικό επιστήμονα να αυτοματοποιήσει τις περισσότερες εργασίες διαχείρισης και ανάλυσης δεδομένων και επίσης δίνει στον επιστήμονα περισσότερο χρόνο να επικεντρωθεί στην επιστήμη. Για να το πετύχει αυτό δεν είναι απαραίτητα ο ερευνητής να είναι έμπειρος προγραμματιστής όπως θα δούμε στο υπόλοιπο του βιβλίου.</p>
 </div>
-<div id="οργάνωση-βιβλίου" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Οργάνωση Βιβλίου</h2>
+<div id="οργάνωση-βιβλίου" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Οργάνωση Βιβλίου<a href="intro.html#οργάνωση-βιβλίου" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Με βάση τα παραπάνω, ο στόχος του βιβλίου αυτού είναι να δώσουμε στους ερευνητές που δεν έχουν προηγουμένες γνώσεις προγραμματισμού, μια προσιτή εισαγωγή στην γλώσσα προγραμματισμού R για διάφορες εργασίες ανάλυσης δεδομένων μέσα στα πλαίσια της κοινωνικής έρευνας. Συνεπώς, το βιβλίο οργανώνεται ως εξής: Στο κεφάλαιο <a href="env.html#env">2</a> παρουσιάζεται μια εισαγωγή στη γλώσσα R, το τρόπο εγκατάστασης της R και τέλος μια πρώτη γνωριμία με το υπολογιστικό περιβάλλον εργασίας R. Στο κεφάλαιο <a href="basicsR.html#basicsR">3</a> δίνoνται σύντομα εισαγωγικά στοιχεία προγραμματισμού γύρω από την γλώσσα R για την καλύτερη κατανόηση των υπολοίπων κεφαλαίων.</p>
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 <!-- Figures and tables with captions will be placed in `figure` and `table` environments, respectively. -->
@@ -241,6 +218,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-r4ds" class="csl-entry">
+Wickham, Hadley, and Garrett Grolemund. 2017. <em><span>R</span> for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.
+</div>
+</div>
             </section>
 
           </div>
@@ -251,7 +234,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -281,6 +263,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BookR.pdf", "BookR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
